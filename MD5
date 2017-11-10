@@ -1,0 +1,13 @@
+01052bea595f5a59a675793b6a49daa0 *DESCRIPTION
+2a207a9258970c0ae6ab72a3b0c2d1e4 *NAMESPACE
+7661fe32c3f0d05d7b52925f163712f3 *NEWS.md
+fef7cf884e54e3d9bf1c6d36dd67aff0 *R/railtrails.R
+467a82c33178c822a05e493809e904ec *README.md
+47190e1dde07db20f5e43dc16ee84cb3 *build/vignette.rds
+ca107912deed4fbb6c7a124339b907e0 *data/datalist
+020830665f9ca7dc3c145b309a9dd37c *data/railtrails.rda
+f52a7851f8c6f093333a502813d7f876 *inst/doc/intro_to_railtrails.R
+222ab1538c869132d03008d3308ba631 *inst/doc/intro_to_railtrails.Rmd
+3e4d4a59b6c3c6146358ad3509ebc247 *inst/doc/intro_to_railtrails.html
+44315465d1cdbb796704bb45e7168f97 *man/railtrails.Rd
+222ab1538c869132d03008d3308ba631 *vignettes/intro_to_railtrails.Rmd
