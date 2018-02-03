@@ -15,11 +15,10 @@ This R data package provides rail information about [rail trails](https://en.wik
 
 ## Installation
 
-You can install railtrails from GitHub with:
+You can install railtrails with the `install.packages()` function.
 
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("jrosen48/railtrail")
+install.packages("railtrails")
 ```
 
 ## Loading the data
@@ -37,16 +36,49 @@ You may want to "unnest" the list-column with reviews in the following way:
 
 ```{r, unnesting}
 library(tidyr)
-railtrails <- railtrails::railtrails
-railtrails <- railtrails %>% unnest(raw_reviews)
-railtrails
+d <- railtrails::railtrails
+d <- d %>% unnest(raw_reviews)
+d
+```
+
+## Processing category and surface (not run)
+
+```{r, eval = F}
+library(dplyr)
+library(forcats)
+library(stringr)
+
+d <- d %>% 
+    mutate(category = as.factor(category),
+           category = fct_recode(category, "Greenway/Non-RT" = "Canal"),
+           mean_review = ifelse(mean_review == 0, NA, mean_review))
+
+d <- mutate(d,
+             surface_rc = case_when(
+                 surface == "Asphalt" ~ "Paved",
+                 surface == "Asphalt, Concrete" ~ "Paved",
+                 surface == "Concrete" ~ "Paved",
+                 surface == "Asphalt, Boardwalk" ~ "Paved",
+                 str_detect(surface, "Stone") ~ "Crushed Stone",
+                 str_detect(surface, "Ballast") ~ "Crushed Stone",
+                 str_detect(surface, "Gravel") ~ "Crushed Stone",
+                 TRUE ~ "Other"
+             )
+)
+
+d$surface_rc <- as.factor(d$surface_rc)
+
+d$surface_rc <- fct_relevel(d$surface_rc,
+                             "Crushed Stone")
+
+d
 ```
 
 ## Note
 
 If you like using this package, please consider visiting or even making a donation to the Rails to Trails Conservancy at via https://www.traillink.com/.
 
-Note that these data were last updated 2017-08-14 and so new trails and particularly reviews have likely been added since then. The `R` files at [here](https://github.com/jrosen48/railtrails/tree/master/data-raw) can be used to create updated data. Pending the same permissions as indicated by the `robots.txt` file and terms of service for use of the TrailLink website, I will plan to update this package bi-yearly (so look for an update around 2018-02-18). 
+Note that these data were last updated 2017-08-14 and so new trails and particularly reviews have likely been added since then. The `R` files at [here](https://github.com/jrosen48/railtrails/tree/master/data-raw) can be used to create updated data. Pending the same permissions as indicated by the `robots.txt` file and terms of service for use of the TrailLink website, I will plan to update this package bi-yearly (this was last updated around 2018-02-2). 
 
 Thank you to [Bob Rudis](https://rud.is/) for feedback on an earlier version of this package.
 
