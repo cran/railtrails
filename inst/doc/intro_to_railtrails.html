@@ -12,7 +12,7 @@
 
 <meta name="author" content="Joshua Rosenberg" />
 
-<meta name="date" content="2018-02-03" />
+<meta name="date" content="2018-02-04" />
 
 <title>Use of railtrails</title>
 
@@ -70,10 +70,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Use of railtrails</h1>
 <h4 class="author"><em>Joshua Rosenberg</em></h4>
-<h4 class="date"><em>2018-02-03</em></h4>
+<h4 class="date"><em>2018-02-04</em></h4>
 
 
 
+<p><a href="https://cran.r-project.org/package=railtrails"><img src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NSIgaGVpZ2h0PSIyMCI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJiIiB4Mj0iMCIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYmJiIiBzdG9wLW9wYWNpdHk9Ii4xIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3Atb3BhY2l0eT0iLjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxtYXNrIGlkPSJhIj4KICAgIDxyZWN0IHdpZHRoPSI4NSIgaGVpZ2h0PSIyMCIgcng9IjMiIGZpbGw9IiNmZmYiLz4KICA8L21hc2s+CiAgPGcgbWFzaz0idXJsKCNhKSI+CiAgICA8cGF0aCBmaWxsPSIjNTU1IiBkPSJNMCAwaDQzdjIwSDB6Ii8+CiAgICA8cGF0aCBmaWxsPSIjNGMxIiBkPSJNNDMgMGg2M3YyMEg0M3oiLz4KICAgIDxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik0wIDBoODV2MjBIMHoiLz4KICA8L2c+CiAgPGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgICBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSI+CiAgICA8dGV4dCB4PSIyMS41IiB5PSIxNSIgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyI+CiAgICAgIENSQU4KICAgIDwvdGV4dD4KICAgIDx0ZXh0IHg9IjIxLjUiIHk9IjE0Ij4KICAgICAgQ1JBTgogICAgPC90ZXh0PgogICAgPHRleHQgeD0iNjMiIHk9IjE1IiBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIj4KICAgICAgMC4wLjIKICAgIDwvdGV4dD4KICAgIDx0ZXh0IHg9IjYzIiB5PSIxNCI+CiAgICAgIDAuMC4yCiAgICA8L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="CRAN status" /></a></p>
 <div id="railtrails" class="section level1">
 <h1>railtrails</h1>
 <p>This R data package provides rail information about <a href="https://en.wikipedia.org/wiki/Rail_trail">rail trails</a> from the excellent <a href="https://www.traillink.com/">TrailLink</a> website, sponsored by the Rails-to-Trails Conservancy.</p>
@@ -87,20 +88,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Here is how to load the data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">railtrails &lt;-<span class="st"> </span>railtrails<span class="op">::</span>railtrails
 railtrails</code></pre></div>
-<pre><code>## # A tibble: 11,638 x 9
+<pre><code>## # A tibble: 3,846 x 11
 ##    state name  distance surface category mean_review description n_reviews
 ##    &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;    
 ##  1 AK    Chas…    14.0  Dirt, … Rail-Tr…           4 &quot;\r\n     … 1 Reviews
 ##  2 AK    Tony…    11.0  Asphalt Rail-Tr…           5 &quot;The Tony … 5 Reviews
 ##  3 AK    Bird…    13.0  Asphalt Rail-Tr…           5 &quot;\r\n     … 3 Reviews
 ##  4 AK    Camp…     7.50 Asphal… Greenwa…           5 &quot;\r\n     … 3 Reviews
-##  5 AK    Chas…    14.0  Dirt, … Rail-Tr…           4 &quot;\r\n     … 1 Reviews
-##  6 AK    Goos…     1.50 Asphal… Greenwa…           0 &quot;\r\n     … 0 Reviews
-##  7 AK    Home…     4.00 Asphalt Greenwa…           5 &quot;On the so… 1 Reviews
-##  8 AK    Lani…     3.90 Asphal… Greenwa…           3 &quot;The Lanie… 1 Reviews
-##  9 AK    Palm…     6.10 Gravel  Rail-Tr…           0 &quot;As its na… 0 Reviews
-## 10 AK    Ship…     2.60 Asphalt Rail-Tr…           4 &quot; \r\nShip… 1 Reviews
-## # ... with 11,628 more rows, and 1 more variable: raw_reviews &lt;list&gt;</code></pre>
+##  5 AK    Goos…     1.50 Asphal… Greenwa…           0 &quot;\r\n     … 0 Reviews
+##  6 AK    Home…     4.00 Asphalt Greenwa…           5 &quot;On the so… 1 Reviews
+##  7 AK    Lani…     3.90 Asphal… Greenwa…           3 &quot;The Lanie… 1 Reviews
+##  8 AK    Palm…     6.10 Gravel  Rail-Tr…           0 &quot;As its na… 0 Reviews
+##  9 AK    Ship…     2.60 Asphalt Rail-Tr…           4 &quot; \r\nShip… 1 Reviews
+## 10 AL    Chie…    33.0  Asphalt Rail-Tr…           5 &quot;In northe… 77 Revie…
+## # ... with 3,836 more rows, and 3 more variables: raw_reviews &lt;list&gt;,
+## #   lat &lt;dbl&gt;, lng &lt;dbl&gt;</code></pre>
+<p>The latitude and longitude are for the trailhead and are from Google Maps searches of the trail’s name (and trail’s state). Around 94% of the trails are associated with latitude and longitude information.</p>
+<p>See more information about the variables with <code>?railtrails</code>.</p>
 </div>
 <div id="unnesting-trail-reviews" class="section level2">
 <h2>“Unnesting” trail reviews</h2>
@@ -109,7 +113,7 @@ railtrails</code></pre></div>
 d &lt;-<span class="st"> </span>railtrails<span class="op">::</span>railtrails
 d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unnest</span>(raw_reviews)
 d</code></pre></div>
-<pre><code>## # A tibble: 75,916 x 9
+<pre><code>## # A tibble: 24,413 x 11
 ##    state name  distance surface category mean_review description n_reviews
 ##    &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;    
 ##  1 AK    Chas…    14.0  Dirt, … Rail-Tr…           4 &quot;\r\n     … 1 Reviews
@@ -122,7 +126,8 @@ d</code></pre></div>
 ##  8 AK    Bird…    13.0  Asphalt Rail-Tr…           5 &quot;\r\n     … 3 Reviews
 ##  9 AK    Bird…    13.0  Asphalt Rail-Tr…           5 &quot;\r\n     … 3 Reviews
 ## 10 AK    Camp…     7.50 Asphal… Greenwa…           5 &quot;\r\n     … 3 Reviews
-## # ... with 75,906 more rows, and 1 more variable: raw_reviews &lt;int&gt;</code></pre>
+## # ... with 24,403 more rows, and 3 more variables: lat &lt;dbl&gt;, lng &lt;dbl&gt;,
+## #   raw_reviews &lt;int&gt;</code></pre>
 </div>
 <div id="processing-category-and-surface-not-run" class="section level2">
 <h2>Processing category and surface (not run)</h2>
